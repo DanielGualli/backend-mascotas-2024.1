@@ -4,10 +4,10 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mysqlds',
   connector: 'mysql',
-  url: 'localhost',
-  host: '3306',
-  port: NaN,
-  user: '',
+  url: '',
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
   password: '',
   database: 'PetpocketDB'
 };
