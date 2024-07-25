@@ -15,6 +15,8 @@ export class HistoriaMedica extends Entity {
     required: true,
   })
   especialidad: string;
+
+
   @property({
     type: 'string',
     required: true,

@@ -23,7 +23,7 @@ export class Mascota extends Entity {
 
   @property({
     type: 'date',
-    requiered: true
+    required: true
   })
   fecha_nacimiento: string;
 
@@ -37,7 +37,7 @@ export class Mascota extends Entity {
     type: 'string',
     required: false,
   })
-  image: string; 
+  imagen: string;
 
 
   constructor(data?: Partial<Mascota>) {
