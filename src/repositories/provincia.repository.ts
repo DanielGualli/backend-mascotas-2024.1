@@ -12,10 +12,14 @@ export class ProvinciaRepository extends DefaultCrudRepository<
 
   public readonly ciudads: HasManyRepositoryFactory<Ciudad, typeof Provincia.prototype.id>;
 
+  public readonly ciudades: HasManyRepositoryFactory<Ciudad, typeof Provincia.prototype.id>;
+
   constructor(
     @inject('datasources.mysqlds') dataSource: MysqldsDataSource, @repository.getter('CiudadRepository') protected ciudadRepositoryGetter: Getter<CiudadRepository>,
   ) {
     super(Provincia, dataSource);
+    this.ciudades = this.createHasManyRepositoryFactoryFor('ciudades', ciudadRepositoryGetter,);
+    this.registerInclusionResolver('ciudades', this.ciudades.inclusionResolver);
     this.ciudads = this.createHasManyRepositoryFactoryFor('ciudads', ciudadRepositoryGetter,);
     this.registerInclusionResolver('ciudads', this.ciudads.inclusionResolver);
   }

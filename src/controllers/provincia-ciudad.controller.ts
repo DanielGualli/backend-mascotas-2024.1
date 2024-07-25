@@ -42,7 +42,7 @@ export class ProvinciaCiudadController {
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter<Ciudad>,
   ): Promise<Ciudad[]> {
-    return this.provinciaRepository.ciudads(id).find(filter);
+    return this.provinciaRepository.ciudades(id).find(filter);
   }
 
   @post('/provincias/{id}/ciudads', {
@@ -67,7 +67,7 @@ export class ProvinciaCiudadController {
       },
     }) ciudad: Omit<Ciudad, 'id'>,
   ): Promise<Ciudad> {
-    return this.provinciaRepository.ciudads(id).create(ciudad);
+    return this.provinciaRepository.ciudades(id).create(ciudad);
   }
 
   @patch('/provincias/{id}/ciudads', {
@@ -90,7 +90,7 @@ export class ProvinciaCiudadController {
     ciudad: Partial<Ciudad>,
     @param.query.object('where', getWhereSchemaFor(Ciudad)) where?: Where<Ciudad>,
   ): Promise<Count> {
-    return this.provinciaRepository.ciudads(id).patch(ciudad, where);
+    return this.provinciaRepository.ciudades(id).patch(ciudad, where);
   }
 
   @del('/provincias/{id}/ciudads', {
@@ -105,6 +105,6 @@ export class ProvinciaCiudadController {
     @param.path.number('id') id: number,
     @param.query.object('where', getWhereSchemaFor(Ciudad)) where?: Where<Ciudad>,
   ): Promise<Count> {
-    return this.provinciaRepository.ciudads(id).delete(where);
+    return this.provinciaRepository.ciudades(id).delete(where);
   }
 }

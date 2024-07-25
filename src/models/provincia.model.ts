@@ -17,7 +17,7 @@ export class Provincia extends Entity {
   nombre: string;
 
   @hasMany(() => Ciudad)
-  ciudads: Ciudad[];
+  ciudades: Ciudad[];
 
   constructor(data?: Partial<Provincia>) {
     super(data);

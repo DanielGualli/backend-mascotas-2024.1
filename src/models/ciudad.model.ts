@@ -4,9 +4,9 @@ import {Provincia} from './provincia.model';
 @model({
   settings: {
     foreignKeys: {
-      fk_provincia_id: {
-        name: 'fk_provincia_id',
-        entity: 'Provincia',
+      fk_provin_ciudad_id: {
+        name: 'fk_provin_ciudad_id',
+        entity: 'provincia',
         entityKey: 'id',
         foreingnKey: 'provinciaId',
       },
